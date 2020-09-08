@@ -1,0 +1,7 @@
+@import "styles/color";
+.header {
+  display: flex;
+  height: 60px;
+  align-self: center;
+  background-color: $header-bg-color;
+}
