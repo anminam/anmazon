@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import SubTotal from "Components/SubTotal/SubTotal";
 import { RootState } from "core/Store";
 import { useSelector } from "react-redux";
+import ProductBasketCard from "Components/ProductBasketCard/ProductBasketCard";
 
 const Checkout = () => {
   const list = useSelector((state: RootState) => state.data.baskets);
@@ -20,9 +21,13 @@ const Checkout = () => {
           <h2>Your shopping Basket</h2>
         </div>
         <div className="checkout__contents">
-          {list.map((item, i) => (
-            <p>{item.title}</p>
-          ))}
+          <ul>
+            {list.map((item, i) => (
+              <li key={item.id}>
+                <ProductBasketCard {...item} />
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
       <div className="checkout__right">
