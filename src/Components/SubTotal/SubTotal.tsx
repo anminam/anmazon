@@ -1,15 +1,21 @@
 import React from "react";
 import "./SubTotal.scss";
 import CurrencyFormat from "react-currency-format";
+import { useSelector } from "react-redux";
+import { RootState } from "core/Store";
 
 const SubTotal = () => {
+  const items = useSelector((state: RootState) => state.data.baskets);
   return (
     <div className="subtotal">
       <CurrencyFormat
         renderText={() => (
           <>
             <p>
-              Subtotal ( 0 items): <strong>0</strong>
+              Subtotal ( {items.length} items):{" "}
+              <strong>
+                ${items.reduce<number>((pre, curr) => pre + curr.price, 0)}
+              </strong>
             </p>
             <small className="subtotal__gift">
               <input type="checkbox" />
