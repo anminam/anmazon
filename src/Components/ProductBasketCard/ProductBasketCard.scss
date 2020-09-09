@@ -1,32 +1,31 @@
 .productbasketcard {
   display: flex;
-  flex-flow: column;
   align-items: center;
   justify-content: space-between;
   max-height: 400px;
   min-width: 100px;
   background-color: white;
   z-index: 1;
-  margin: 0 5px;
   padding: 20px;
   flex: 1;
+
+  &__image {
+    img {
+      object-fit: contain;
+      max-width: 100px;
+      max-height: 200px;
+    }
+  }
+
   &__info {
     display: flex;
     flex-flow: column;
+    margin-left: 20px;
     width: 100%;
   }
 
   &__ratring {
     display: flex;
-  }
-  &__image {
-    // max-height: 200px;
-
-    img {
-      object-fit: contain;
-      max-height: 200px;
-      width: 100%;
-    }
   }
 
   &__title {
