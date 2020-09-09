@@ -6,9 +6,9 @@ interface IOption {
   contents: string;
 }
 const initState = [
-  { title: "a", contents: "b" },
-  { title: "a", contents: "b" },
-  { title: "a", contents: "b" },
+  { title: "Hello, Sign in", contents: "Account" },
+  { title: "Returns", contents: "& Orders" },
+  { title: "this is", contents: "What the" },
 ];
 
 const Nav = () => {
@@ -17,8 +17,8 @@ const Nav = () => {
     <div className="nav">
       {list.map((item) => (
         <div className="nav__option">
-          <div className="nav__option_one">{item.title}</div>
-          <div className="nav__option_two">{item.contents}</div>
+          <div className="nav__option__one">{item.title}</div>
+          <div className="nav__option__two">{item.contents}</div>
         </div>
       ))}
     </div>

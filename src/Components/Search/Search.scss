@@ -1,4 +1,23 @@
 .search {
   display: flex;
+  flex: 1;
   align-items: center;
+
+  $height: 40px;
+
+  &__input {
+    flex: 1;
+    height: $height;
+    padding: 0 10px;
+    border: 0;
+    border-radius: 4px 0 0 4px;
+  }
+  svg {
+    height: $height;
+    width: $height;
+    padding: 4px;
+    background-color: #febd68;
+    box-sizing: border-box;
+    border-radius: 0 4px 4px 0;
+  }
 }
