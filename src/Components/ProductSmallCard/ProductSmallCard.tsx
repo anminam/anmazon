@@ -1,9 +1,23 @@
 import React from "react";
 import "./ProductSmallCard.scss";
 import { IProduct } from "interfaces/IProduct";
+import { useDispatch } from "react-redux";
+import { addToBasket } from "core/data/actions";
 
-const ProductSmallCard = ({ title, price, img, rating }: IProduct) => {
-  const handleButtonClick = () => {};
+const ProductSmallCard = ({ title, price, img, rating, id }: IProduct) => {
+  const dispatch = useDispatch();
+
+  const handleButtonClick = () => {
+    dispatch(
+      addToBasket({
+        title,
+        price,
+        img,
+        rating,
+        id,
+      })
+    );
+  };
   return (
     <div className="productsmallcard">
       <div className="productsmallcard__info">
@@ -14,7 +28,9 @@ const ProductSmallCard = ({ title, price, img, rating }: IProduct) => {
         </div>
         <div className="productsmallcard__rating">
           {[...Array(rating)].map((item, i) => (
-            <span key={i}>🌟</span>
+            <span key={i} role="img" aria-label="star">
+              🌟
+            </span>
           ))}
         </div>
         <div className="productsmallcard__rating"></div>

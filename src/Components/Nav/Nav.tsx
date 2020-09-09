@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Nav.scss";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import { Link } from "react-router-dom";
 
 interface IOption {
   title: string;
@@ -24,10 +25,12 @@ const Nav = () => {
         </div>
       ))}
       <div className="nav__option">
-        <div className="nav__option__basket">
-          <ShoppingBasketIcon />
-          <span className="nav__option__basket__count">{shoppingCount}</span>
-        </div>
+        <Link to="/checkout">
+          <div className="nav__option__basket">
+            <ShoppingBasketIcon />
+            <span className="nav__option__basket__count">{shoppingCount}</span>
+          </div>
+        </Link>
       </div>
     </div>
   );
