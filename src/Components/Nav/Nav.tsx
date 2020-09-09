@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./Nav.scss";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "core/Store";
 
 interface IOption {
   title: string;
@@ -15,7 +17,8 @@ const initState = [
 
 const Nav = () => {
   const [list, setList] = useState<IOption[]>(initState);
-  const [shoppingCount, setShoppingCount] = useState<number>(0);
+
+  const baskets = useSelector((state: RootState) => state.data.baskets);
   return (
     <div className="nav">
       {list.map((item, i) => (
@@ -28,7 +31,7 @@ const Nav = () => {
         <Link to="/checkout">
           <div className="nav__option__basket">
             <ShoppingBasketIcon />
-            <span className="nav__option__basket__count">{shoppingCount}</span>
+            <span className="nav__option__basket__count">{baskets.length}</span>
           </div>
         </Link>
       </div>
