@@ -33,7 +33,6 @@ const ProductSmallCard = ({ title, price, img, rating, id }: IProduct) => {
             </span>
           ))}
         </div>
-        <div className="productsmallcard__rating"></div>
       </div>
       <div className="productsmallcard__image">
         <img src={img} alt={title} />
