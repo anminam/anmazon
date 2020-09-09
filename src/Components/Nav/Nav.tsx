@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Nav.scss";
+import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 
 interface IOption {
   title: string;
@@ -13,14 +14,21 @@ const initState = [
 
 const Nav = () => {
   const [list, setList] = useState<IOption[]>(initState);
+  const [shoppingCount, setShoppingCount] = useState<number>(0);
   return (
     <div className="nav">
-      {list.map((item) => (
-        <div className="nav__option">
+      {list.map((item, i) => (
+        <div key={i} className="nav__option">
           <div className="nav__option__one">{item.title}</div>
           <div className="nav__option__two">{item.contents}</div>
         </div>
       ))}
+      <div className="nav__option">
+        <div className="nav__option__basket">
+          <ShoppingBasketIcon />
+          <span className="nav__option__basket__count">{shoppingCount}</span>
+        </div>
+      </div>
     </div>
   );
 };
