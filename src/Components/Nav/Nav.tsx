@@ -16,7 +16,7 @@ const initState = [
 ];
 
 const Nav = () => {
-  const [list, setList] = useState<IOption[]>(initState);
+  const [list] = useState<IOption[]>(initState);
 
   const baskets = useSelector((state: RootState) => state.data.baskets);
   return (
