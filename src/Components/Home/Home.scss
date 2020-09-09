@@ -1,0 +1,19 @@
+@import "styles/color";
+.home {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1500px;
+
+  &__image {
+    width: 100%;
+    margin-bottom: -100px;
+    z-index: -1;
+  }
+
+  &__row {
+    display: flex;
+    z-index: 1;
+    margin-top: 10px;
+  }
+}
