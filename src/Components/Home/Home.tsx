@@ -16,9 +16,9 @@ const Home = () => {
           <ProductSmallCard {...getLocalDataList()[1]} />
         </div>
         <div className="home__row">
-          <ProductSmallCard {...getLocalDataList()[0]} />
-          <ProductSmallCard {...getLocalDataList()[0]} />
-          <ProductSmallCard {...getLocalDataList()[0]} />
+          <ProductSmallCard {...getLocalDataList()[2]} />
+          <ProductSmallCard {...getLocalDataList()[3]} />
+          <ProductSmallCard {...getLocalDataList()[4]} />
         </div>
       </div>
     </div>
