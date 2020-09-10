@@ -3,6 +3,7 @@ import "./ProductBasketCard.scss";
 import { IProduct } from "interfaces/IProduct";
 import { useDispatch } from "react-redux";
 import { removeFromBasket } from "core/data/actions";
+import ProductStars from "Components/ProductStars/ProductStars";
 
 const ProductBasketCard = ({ title, price, img, rating, id }: IProduct) => {
   const dispatch = useDispatch();
@@ -22,11 +23,7 @@ const ProductBasketCard = ({ title, price, img, rating, id }: IProduct) => {
           <strong>{price}</strong>
         </div>
         <div className="productbasketcard__rating">
-          {[...Array(rating)].map((item, i) => (
-            <span key={i} role="img" aria-label="star">
-              🌟
-            </span>
-          ))}
+          <ProductStars rating={rating} />
         </div>
         <div className="productbasketcard__footer">
           <button onClick={handleButtonClick}>Remove from Basket</button>

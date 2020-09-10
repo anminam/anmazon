@@ -3,6 +3,7 @@ import "./ProductSmallCard.scss";
 import { IProduct } from "interfaces/IProduct";
 import { useDispatch } from "react-redux";
 import { addToBasket } from "core/data/actions";
+import ProductStars from "Components/ProductStars/ProductStars";
 
 const ProductSmallCard = ({ title, price, img, rating, id }: IProduct) => {
   const dispatch = useDispatch();
@@ -27,11 +28,7 @@ const ProductSmallCard = ({ title, price, img, rating, id }: IProduct) => {
           <strong>{price}</strong>
         </div>
         <div className="productsmallcard__rating">
-          {[...Array(rating)].map((item, i) => (
-            <span key={i} role="img" aria-label="star">
-              🌟
-            </span>
-          ))}
+          <ProductStars rating={rating} />
         </div>
       </div>
       <div className="productsmallcard__image">
