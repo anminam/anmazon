@@ -5,6 +5,7 @@ import { RootState } from "core/Store";
 import { useSelector } from "react-redux";
 import ProductBasketCard from "Components/ProductBasketCard/ProductBasketCard";
 import FlipMove from "react-flip-move";
+import { Utils } from "core/Utils";
 
 const Checkout = () => {
   const user = useSelector((state: RootState) => state.data.user);
@@ -19,7 +20,7 @@ const Checkout = () => {
           </div>
         </a>
         <div className="checkout__title">
-          <h1>Hello, {user?.email}</h1>
+          <h1>Hello, {Utils.getEmailName(user)}</h1>
           <h2>Your shopping Basket</h2>
         </div>
         <div className="checkout__contents">

@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "core/Store";
 import { auth } from "firebaseAnmazon";
 import { setUser } from "core/data/actions";
+import { Utils } from "core/Utils";
 
 interface IOption {
   title: string;
@@ -30,20 +31,11 @@ const Nav = () => {
     }
   };
 
-  const getEmailName = (user: firebase.User | null): string => {
-    let name = "Guest";
-    if (user && user.email) {
-      name = user.email.split("@")[0];
-    }
-
-    return name;
-  };
-
   return (
     <div className="nav">
       <div className="nav__option">
         <Link to={!user ? "/login" : ""}>
-          <div className="nav__option__one">{`Hello, ${getEmailName(
+          <div className="nav__option__one">{`Hello, ${Utils.getEmailName(
             user
           )}`}</div>
           <div className="nav__option__two" onClick={handleAuth}>
