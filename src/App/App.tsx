@@ -10,6 +10,7 @@ import Login from "Components/Login/Login";
 import { auth } from "firebaseAnmazon";
 import { useDispatch } from "react-redux";
 import { setUser } from "core/data/actions";
+import SideMenu from "Components/SideMenu/SideMenu";
 
 function App() {
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ function App() {
   return (
     <Router>
       <div className="app">
+        <SideMenu />
         <Switch>
           <Route path="/login">
             <Login />
