@@ -3,6 +3,7 @@ import "./SideMenu.scss";
 import { RootState } from "core/Store";
 import { useSelector, useDispatch } from "react-redux";
 import { setSideBar } from "core/data/actions";
+import { Link } from "react-router-dom";
 
 const SideMenu = () => {
   const dispatch = useDispatch();
@@ -20,8 +21,16 @@ const SideMenu = () => {
   const handleCloseButton = () => {
     dispatch(setSideBar(false));
   };
+  const heandleClickSideMenu = (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
+    dispatch(setSideBar(false));
+  };
   return (
-    <div className={`sidemenu ${isOpen ? "active" : ""}`}>
+    <div
+      className={`sidemenu ${isOpen ? "active" : ""}`}
+      onClick={heandleClickSideMenu}
+    >
       <div className="sidemenu__container">
         <button
           type="button"
@@ -30,7 +39,16 @@ const SideMenu = () => {
         >
           X
         </button>
-        <h1>Hello, {getEmailName(user)}</h1>
+        <div className="sidemenu__login">
+          <h1>Hello, {getEmailName(user)}</h1>
+        </div>
+        <div className="sidemenu__common-list">
+          <ul>
+            <li>
+              <Link to="/login">Sign In</Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
