@@ -7,6 +7,13 @@ export const setUser = (user: firebase.User | null) => ({
   payload: user,
 });
 
+export const SET_SIDE_BAR = "SET_SIDE_BAR" as const;
+
+export const setSideBar = (isOpen: boolean) => ({
+  type: SET_SIDE_BAR,
+  payload: isOpen,
+});
+
 export const ADD_TO_BASKET = "ADD_TO_BASKET" as const;
 export const REMOVE_FROM_BASKET = "REMOVE_FROM_BASKET" as const;
 
@@ -21,5 +28,6 @@ export const removeFromBasket = (id: string) => ({
 
 export type TDataActions =
   | ReturnType<typeof setUser>
+  | ReturnType<typeof setSideBar>
   | ReturnType<typeof addToBasket>
   | ReturnType<typeof removeFromBasket>;

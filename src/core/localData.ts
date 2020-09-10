@@ -43,5 +43,14 @@ export const getLocalDataList = (): IProduct[] => {
       img:
         "https://images-na.ssl-images-amazon.com/images/I/31PTviHMeUL._AC_US320_FMwebp_QL65_.jpg",
     },
+    {
+      id: "6",
+      title:
+        "Samsung 34-Inch SJ55W Ultrawide Gaming Monitor (LS34J550WQNXZA) – 75Hz Refresh, WQHD Computer Monitor, 3440 x 1440p Resolution, 4ms Response, FreeSync, Split Screen, HDMI, Black",
+      price: 379.99,
+      rating: 4,
+      img:
+        "https://images-na.ssl-images-amazon.com/images/I/91g-Y1B09EL._AC_SL1500_.jpg",
+    },
   ];
 };
