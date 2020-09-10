@@ -1,9 +1,11 @@
 @import "../../styles/index";
 .checkout {
   display: flex;
-  padding: 20px;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1500px;
+  padding-bottom: 20px;
   background-color: white;
-  height: max-content;
 
   &__ad {
     width: 100%;
