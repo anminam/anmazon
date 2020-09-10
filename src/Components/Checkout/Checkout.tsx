@@ -13,17 +13,29 @@ const Checkout = () => {
   //  baskets
   return (
     <div className="checkout">
-      <div className="checkout__left">
-        <a href="https://anminam.com" target="_blank" rel="noopener noreferrer">
-          <div className="checkout__ad">
-            <img src="images/anminam-ad.png" alt="anminam.com ad" />
+      <div className="checkout__header">
+        <div className="checkout__left">
+          <a
+            href="https://anminam.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="checkout__ad">
+              <img src="images/anminam-ad.png" alt="anminam.com ad" />
+            </div>
+          </a>
+          <div className="checkout__title">
+            <h1>Hello, {Utils.getEmailName(user)}</h1>
+            <h2>Your shopping Basket</h2>
           </div>
-        </a>
-        <div className="checkout__title">
-          <h1>Hello, {Utils.getEmailName(user)}</h1>
-          <h2>Your shopping Basket</h2>
         </div>
-        <div className="checkout__contents">
+        <div className="checkout__right">
+          <SubTotal />
+        </div>
+      </div>
+      <div className="checkout__contents">
+        {list.length === 0 && <div>empty</div>}
+        {list.length > 0 && (
           <FlipMove typeName="ul">
             {list.map((item, i) => (
               <li key={item.id}>
@@ -31,10 +43,7 @@ const Checkout = () => {
               </li>
             ))}
           </FlipMove>
-        </div>
-      </div>
-      <div className="checkout__right">
-        <SubTotal />
+        )}
       </div>
     </div>
   );
