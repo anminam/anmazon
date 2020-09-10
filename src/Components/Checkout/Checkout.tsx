@@ -4,8 +4,10 @@ import SubTotal from "Components/SubTotal/SubTotal";
 import { RootState } from "core/Store";
 import { useSelector } from "react-redux";
 import ProductBasketCard from "Components/ProductBasketCard/ProductBasketCard";
+import FlipMove from "react-flip-move";
 
 const Checkout = () => {
+  const user = useSelector((state: RootState) => state.data.user);
   const list = useSelector((state: RootState) => state.data.baskets);
   //  baskets
   return (
@@ -17,16 +19,17 @@ const Checkout = () => {
           </div>
         </a>
         <div className="checkout__title">
+          <h1>Hello, {user?.email}</h1>
           <h2>Your shopping Basket</h2>
         </div>
         <div className="checkout__contents">
-          <ul>
+          <FlipMove typeName="ul">
             {list.map((item, i) => (
               <li key={item.id}>
                 <ProductBasketCard {...item} />
               </li>
             ))}
-          </ul>
+          </FlipMove>
         </div>
       </div>
       <div className="checkout__right">

@@ -6,7 +6,7 @@ import Nav from "Components/Nav/Nav";
 const Header = () => {
   return (
     <header className="header">
-      <Logo />
+      <Logo color="white" />
       <Search />
       <Nav />
     </header>
