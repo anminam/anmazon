@@ -1,3 +1,4 @@
+@import "../../styles/color";
 .nav {
   display: flex;
   padding: 0 10px;
@@ -24,13 +25,28 @@
       color: #fff;
 
       &__count {
+        color: $cart-count-color;
         min-width: 1em;
         padding-left: 5px;
+        font-weight: bold;
       }
     }
   }
 
   &__option + &__option {
     padding-left: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    padding: 0;
+    .nav__option {
+      padding: 0;
+      display: none;
+      &.mobile_show {
+        display: flex;
+      }
+    }
   }
 }

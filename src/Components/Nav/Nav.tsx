@@ -30,13 +30,22 @@ const Nav = () => {
     }
   };
 
+  const getEmailName = (user: firebase.User | null): string => {
+    let name = "Guest";
+    if (user && user.email) {
+      name = user.email.split("@")[0];
+    }
+
+    return name;
+  };
+
   return (
     <div className="nav">
       <div className="nav__option">
         <Link to={!user ? "/login" : ""}>
-          <div className="nav__option__one">{`Hello, ${
-            user?.displayName || "Guest"
-          }`}</div>
+          <div className="nav__option__one">{`Hello, ${getEmailName(
+            user
+          )}`}</div>
           <div className="nav__option__two" onClick={handleAuth}>
             {user ? "Sign Out" : "Sign In"}
           </div>
@@ -49,7 +58,7 @@ const Nav = () => {
         </div>
       ))}
       {/* 체크아웃 */}
-      <div className="nav__option">
+      <div className="nav__option mobile_show">
         <Link to="/checkout">
           <div className="nav__option__basket">
             <ShoppingBasketIcon />
