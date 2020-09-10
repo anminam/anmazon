@@ -8,8 +8,8 @@ const Home = () => {
       <div className="home__container">
         <img
           className="home__image"
-          src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Hero/Fuji_TallHero_45M_v2_2x._CB432458382_.jpg"
-          alt="we ship over 45 million products around the world"
+          src="/images/adman.png"
+          alt="It takes more than 45 million days to ship products worldwide."
         />
         <div className="home__row">
           <ProductSmallCard {...getLocalDataList()[0]} />
@@ -19,6 +19,9 @@ const Home = () => {
           <ProductSmallCard {...getLocalDataList()[2]} />
           <ProductSmallCard {...getLocalDataList()[3]} />
           <ProductSmallCard {...getLocalDataList()[4]} />
+        </div>
+        <div className="home__row">
+          <ProductSmallCard {...getLocalDataList()[5]} />
         </div>
       </div>
     </div>
