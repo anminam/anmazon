@@ -4,4 +4,18 @@
   height: 60px;
   align-self: center;
   background-color: $header-bg-color;
+  &__menu {
+    display: flex;
+    align-items: center;
+
+    > button {
+      color: white;
+      padding: 0 3px;
+      background: transparent;
+      border: 0;
+      > svg {
+        font-size: 2rem;
+      }
+    }
+  }
 }

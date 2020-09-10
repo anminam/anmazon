@@ -77,14 +77,15 @@ const Login = () => {
         <p>By signing-in agree to the ANMAZON FAKE of us sales</p>
       </div>
 
-      <div className="login__footer">
-        <div className="login__footer__label">
+      <div className="login__buttom">
+        <div className="login__buttom__label">
           <p>New to Amazon?</p>
         </div>
         <button className="login__register" onClick={handleRegister}>
           Create Your Anmazon account
         </button>
       </div>
+      {/* <div className="divider"></div> */}
     </div>
   );
 };
