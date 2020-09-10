@@ -4,6 +4,10 @@
 
 > https://anmazon.web.app
 
+## icon
+
+- https://material-ui.com/components/material-icons/
+
 ## Airtable
 
 - name
