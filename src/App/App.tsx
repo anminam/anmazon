@@ -11,6 +11,7 @@ import { auth } from "firebaseAnmazon";
 import { useDispatch } from "react-redux";
 import { setUser } from "core/data/actions";
 import SideMenu from "Components/SideMenu/SideMenu";
+import Footer from "Components/Footer/Footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -44,6 +45,7 @@ function App() {
             <Home />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </Router>
   );

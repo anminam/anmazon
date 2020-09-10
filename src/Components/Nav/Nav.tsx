@@ -34,11 +34,11 @@ const Nav = () => {
   return (
     <div className="nav">
       <div className="nav__option">
-        <Link to={!user ? "/login" : ""}>
+        <Link to={!user ? "/login" : ""} onClick={handleAuth}>
           <div className="nav__option__one">{`Hello, ${Utils.getEmailName(
             user
           )}`}</div>
-          <div className="nav__option__two" onClick={handleAuth}>
+          <div className="nav__option__two">
             {user ? "Sign Out" : "Sign In"}
           </div>
         </Link>

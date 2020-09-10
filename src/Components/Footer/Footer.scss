@@ -1,0 +1,14 @@
+@import "../../styles/index";
+.footer {
+  padding: 20px 0 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__social-copyright {
+    font-size: 0.8em;
+  }
+  a {
+    color: black;
+    text-decoration: none;
+  }
+}
