@@ -6,6 +6,13 @@ import { RootState } from "core/Store";
 
 const SubTotal = () => {
   const items = useSelector((state: RootState) => state.data.baskets);
+  const handleProcessButtonClick = () => {
+    if (items.length === 0) {
+      alert("Plz, Have to choose a product");
+    } else {
+      alert(`Do you wants to buy ${items.length} items?`);
+    }
+  };
   return (
     <div className="subtotal">
       <CurrencyFormat
@@ -26,7 +33,9 @@ const SubTotal = () => {
         thousandSeparator={true}
         prefix={""}
       />
-      <button type="button">Proceed to Checkout</button>
+      <button type="button" onClick={handleProcessButtonClick}>
+        Proceed to Checkout
+      </button>
     </div>
   );
 };
