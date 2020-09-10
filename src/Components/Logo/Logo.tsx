@@ -1,9 +1,14 @@
 import React from "react";
 import "./Logo.scss";
-import img from "Images/anmazon.png";
+import imgBlack from "Images/anmazon_logo_black.png";
+import imgWhite from "Images/anmazon_logo_white.png";
 import { Link } from "react-router-dom";
 
-const Logo = () => {
+interface IProps {
+  color?: "white" | "black";
+}
+const Logo = ({ color = "black" }: IProps) => {
+  const img = color === "black" ? imgBlack : imgWhite;
   return (
     <div className="logo">
       <Link to="/">

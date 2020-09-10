@@ -5,6 +5,7 @@
   height: 100vh;
   flex-flow: column;
   align-items: center;
+  padding-top: 30px;
 
   button {
     display: block;
@@ -49,6 +50,7 @@
         border: 1px soild;
         height: 30px;
         margin-top: 5px;
+        padding: 0 5px;
       }
     }
   }
@@ -59,7 +61,7 @@
     &__label {
       margin-bottom: 10px;
       font-weight: 500;
-      color: #888;
+      color: #777;
       font-size: 0.8rem;
       text-align: center;
     }
