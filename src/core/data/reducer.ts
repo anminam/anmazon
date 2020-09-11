@@ -5,17 +5,18 @@ import {
   REMOVE_FROM_BASKET,
   SET_USER,
   SET_SIDE_BAR,
+  ADD_BASKET_LIST,
 } from "./actions";
 
 interface IData {
   user: firebase.User | null;
-  baskets: IProduct[];
+  basket: IProduct[];
   isSideMenuOpen: boolean;
 }
 
 const initState = {
   user: null,
-  baskets: [],
+  basket: [],
   isSideMenuOpen: false,
 };
 
@@ -24,14 +25,17 @@ const reducer = (state: IData = initState, action: TDataActions): IData => {
     case ADD_TO_BASKET:
       return {
         ...state,
-        baskets: [...state.baskets, action.payload],
+        basket: [...state.basket, action.payload],
+      };
+    case ADD_BASKET_LIST:
+      return {
+        ...state,
+        basket: action.payload,
       };
     case REMOVE_FROM_BASKET:
       return {
         ...state,
-        baskets: [
-          ...state.baskets.filter((item) => item.id !== action.payload),
-        ],
+        basket: [...state.basket.filter((item) => item.id !== action.payload)],
       };
     case SET_USER:
       return {
