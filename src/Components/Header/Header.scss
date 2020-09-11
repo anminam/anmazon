@@ -3,7 +3,9 @@
   display: flex;
   height: 60px;
   align-self: center;
-  background-color: $header-bg-color;
+  background-color: $header-bg-main-color;
+  color: $header-font-main-color;
+
   &__menu {
     display: flex;
     align-items: center;
