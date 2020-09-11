@@ -1,14 +1,35 @@
 @import "../../styles/index";
 .footer {
-  padding: 20px 0 40px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  &__buttom {
+    padding: 20px 0 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $footer-bg-main-color;
+    color: $footer-font-main-color;
+  }
   &__social-copyright {
     font-size: 0.8em;
   }
   a {
-    color: black;
+    color: $footer-font-main-color;
     text-decoration: none;
+  }
+
+  &__back-to-top {
+    display: flex;
+    justify-content: center;
+    background-color: #37475a;
+
+    > button {
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+      @include resetButton();
+      color: #fff;
+      padding: 15px;
+      font-size: 0.8em;
+      font-weight: bold;
+    }
   }
 }

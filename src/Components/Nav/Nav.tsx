@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Nav.scss";
+
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -12,14 +13,9 @@ interface IOption {
   title: string;
   contents: string;
 }
-const initState = [
-  { title: "Returns", contents: "& Orders" },
-  { title: "this is", contents: "What the" },
-];
 
 const Nav = () => {
   const dispatch = useDispatch();
-  const [list] = useState<IOption[]>(initState);
   const basket = useSelector((state: RootState) => state.data.basket);
   const user = useSelector((state: RootState) => state.data.user);
 
@@ -43,12 +39,17 @@ const Nav = () => {
           </div>
         </Link>
       </div>
-      {list.map((item, i) => (
-        <div key={i} className="nav__option">
-          <div className="nav__option__one">{item.title}</div>
-          <div className="nav__option__two">{item.contents}</div>
-        </div>
-      ))}
+      {/*  */}
+      <div className="nav__option">
+        <Link to="/orders">
+          <div className="nav__option__one">Returns</div>
+          <div className="nav__option__two">{`& Orders`}</div>
+        </Link>
+      </div>
+      <div className="nav__option">
+        <div className="nav__option__one">this is</div>
+        <div className="nav__option__two">What the</div>
+      </div>
       {/* 체크아웃 */}
       <div className="nav__option mobile_show">
         <Link to="/checkout">

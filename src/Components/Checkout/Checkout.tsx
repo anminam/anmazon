@@ -35,7 +35,9 @@ const Checkout = () => {
         </div>
       </div>
       <div className="checkout__contents">
-        {basket.length === 0 && <div>empty</div>}
+        {basket.length === 0 && (
+          <div className="checkout__empty">Empty!!! Go Shopping</div>
+        )}
         {basket.length > 0 && (
           <FlipMove typeName="ul">
             {basket.map((item, i) => (

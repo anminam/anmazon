@@ -30,25 +30,32 @@ const Orders = () => {
 
   return (
     <div className="orders">
-      <div className="orders__header">
-        <h1>Your Orders</h1>
-      </div>
-      <div className="orders__contents">
-        <ul>
-          {orders.map((order) => (
-            <li key={order.id} className="orders__item">
-              <div className="orders__item__header">
-                <ul>
-                  {order.product.map((product) => (
-                    <li>
-                      <ProductBasketCard {...product} />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </li>
-          ))}
-        </ul>
+      <div className="orders__container">
+        <div className="orders__header">
+          <h1>Your Orders</h1>
+        </div>
+        <div className="orders__contents">
+          <ul>
+            {orders.map((order) => (
+              <li key={order.id} className="orders__item">
+                <div className="orders__item__header">
+                  <ul>
+                    {order.product.map((product) => (
+                      <li>
+                        <ProductBasketCard {...product} />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="orders__footer">
+          <p>
+            You have not placed any orders in past 6 months. View orders in 2020
+          </p>
+        </div>
       </div>
     </div>
   );

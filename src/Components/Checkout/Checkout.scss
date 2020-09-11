@@ -38,4 +38,10 @@
     border-bottom: 1px solid #ddd;
     padding-bottom: 1em;
   }
+
+  &__empty {
+    font-size: 3rem;
+    color: red;
+    font-weight: bold;
+  }
 }

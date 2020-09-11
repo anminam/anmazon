@@ -37,7 +37,11 @@ const SubTotal = () => {
         thousandSeparator={true}
         prefix={"$"}
       />
-      <button type="button" onClick={handleProcessButtonClick}>
+      <button
+        type="button"
+        onClick={handleProcessButtonClick}
+        disabled={basket.length === 0}
+      >
         Proceed to Checkout
       </button>
     </div>

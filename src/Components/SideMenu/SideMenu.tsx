@@ -26,12 +26,21 @@ const SideMenu = () => {
   ) => {
     dispatch(setSideBar(false));
   };
+  /**
+   * 컨테이너 클릭시
+   * @param event
+   */
+  const handleContainerClick = (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
+    event.stopPropagation();
+  };
   return (
     <div
       className={`sidemenu ${isOpen ? "active" : ""}`}
       onClick={heandleClickSideMenu}
     >
-      <div className="sidemenu__container">
+      <div className="sidemenu__container" onClick={handleContainerClick}>
         <button
           type="button"
           className="close-button"
