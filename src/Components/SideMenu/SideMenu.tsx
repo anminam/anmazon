@@ -53,8 +53,13 @@ const SideMenu = () => {
         </div>
         <div className="sidemenu__common-list">
           <ul>
+            {!user && (
+              <li>
+                <Link to="/login">Sign In</Link>
+              </li>
+            )}
             <li>
-              <Link to="/login">Sign In</Link>
+              <Link to="/checkout">Cart</Link>
             </li>
           </ul>
         </div>

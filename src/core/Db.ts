@@ -13,7 +13,7 @@ const db = {
       .collection("orders")
       .doc(paymentIntent.id)
       .set({
-        basket,
+        products: basket,
         amount: paymentIntent.amount,
         created: paymentIntent.created,
       });

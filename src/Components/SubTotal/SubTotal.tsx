@@ -8,10 +8,16 @@ import { useHistory } from "react-router-dom";
 const SubTotal = () => {
   const history = useHistory();
 
+  const user = useSelector((state: RootState) => state.data.user);
   const basket = useSelector((state: RootState) => state.data.basket);
+
   const handleProcessButtonClick = () => {
     if (basket.length === 0) {
       alert("Plz, Have to choose a product");
+      return;
+    } else if (!user) {
+      alert("Plz, Login");
+      return;
     } else {
       history.push("/payment");
       // alert(`Do you wants to buy ${items.length} items?`);

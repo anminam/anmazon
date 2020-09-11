@@ -2,6 +2,7 @@
   display: flex;
   flex-flow: column;
   align-items: center;
+  flex: 1;
   justify-content: space-between;
   max-height: 400px;
   min-width: 100px;
@@ -9,7 +10,8 @@
   z-index: 1;
   margin: 0 5px;
   padding: 20px;
-  flex: 1;
+  transition: 1s;
+
   &__info {
     display: flex;
     flex-flow: column;
@@ -30,7 +32,7 @@
   }
 
   &__title {
-    max-height: 75px;
+    max-height: 4em;
     overflow: hidden;
   }
 
@@ -43,5 +45,11 @@
       font-size: 0.7rem;
       padding: 0.2em 0.5em;
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .productsmallcard {
+    padding: 10px;
   }
 }
