@@ -4,12 +4,12 @@ import "styles/index.scss";
 
 import Header from "Components/Header/Header";
 import Home from "Components/Home/Home";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
 import Checkout from "Components/Checkout/Checkout";
 import Login from "Components/Login/Login";
 import { auth } from "firebaseAnmazon";
 import { useDispatch, useSelector } from "react-redux";
-import { setUser } from "core/data/actions";
+import { setSideBar, setUser } from "core/data/actions";
 import SideMenu from "Components/SideMenu/SideMenu";
 import Footer from "Components/Footer/Footer";
 import Payment from "Components/Payment/Payment";
@@ -50,36 +50,42 @@ function App() {
     localStorage.setItem("cart-list", JSON.stringify(basket));
   }, [basket]);
 
+  const history = useHistory();
+
+  useEffect(() => {
+    return history.listen((state) => {
+      dispatch(setSideBar(false));
+    });
+  }, [history]);
+
   return (
-    <Router>
-      <div className="app">
-        <SideMenu />
-        <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/checkout">
-            <Header />
-            <Checkout />
-          </Route>
-          <Route path="/payment">
-            <Header />
-            <Elements stripe={promise}>
-              <Payment />
-            </Elements>
-          </Route>
-          <Route path="/orders">
-            <Header />
-            <Orders />
-          </Route>
-          <Route path="/">
-            <Header />
-            <Home />
-          </Route>
-        </Switch>
-        <Footer />
-      </div>
-    </Router>
+    <div className="app">
+      <SideMenu />
+      <Switch>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/checkout">
+          <Header />
+          <Checkout />
+        </Route>
+        <Route path="/payment">
+          <Header />
+          <Elements stripe={promise}>
+            <Payment />
+          </Elements>
+        </Route>
+        <Route path="/orders">
+          <Header />
+          <Orders />
+        </Route>
+        <Route path="/">
+          <Header />
+          <Home />
+        </Route>
+      </Switch>
+      <Footer />
+    </div>
   );
 }
 
