@@ -15,9 +15,12 @@ import {
 import axios from "core/Axios";
 import { Utils } from "core/Utils";
 import { useHistory } from "react-router-dom";
+import { emptyBasket } from "core/data/actions";
+import { db } from "core/Db";
 
 const Payment = () => {
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const user = useSelector((state: RootState) => state.data.user);
   const basket = useSelector((state: RootState) => state.data.basket);
@@ -28,7 +31,7 @@ const Payment = () => {
   const [succeeded, setSucceeded] = useState(false);
   const [error, setError] = useState<string>("");
   const [processing, setProcessing] = useState(false);
-  const [disabled, setDisabled] = useState(true);
+  const [disabled, setDisabled] = useState(false);
   const [clientSecret, setClientSecret] = useState<string>("");
 
   useEffect(() => {
@@ -38,11 +41,13 @@ const Payment = () => {
         url: `/payments/create?total=${Utils.getBasketTotal(basket) * 100}`,
       });
 
-      setClientSecret(res.data.clientScret);
+      setClientSecret(res.data.clientSecret);
     };
 
     getClientSecret();
   }, [basket]);
+
+  console.log("clientSecret", clientSecret);
 
   const handlePaymentSubmit = async (
     event: React.FormEvent<HTMLFormElement>
@@ -60,10 +65,15 @@ const Payment = () => {
       })
       .then(({ paymentIntent }) => {
         // paynet
+        if (user && paymentIntent) {
+          db.setBasket(user, paymentIntent, basket);
+        }
 
         setSucceeded(true);
         setError("");
         setProcessing(false);
+
+        dispatch(emptyBasket());
 
         history.replace("/orders");
       });
