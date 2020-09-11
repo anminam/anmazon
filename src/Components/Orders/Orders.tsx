@@ -2,14 +2,15 @@ import React, { useEffect, useState } from "react";
 import "./Orders.scss";
 import { useSelector } from "react-redux";
 import { RootState } from "core/Store";
-import { IOrder } from "interfaces/IOrder";
+import { IOrder, IOrderProduct } from "interfaces/IOrder";
 import { db as _ } from "firebaseAnmazon";
-import { IProduct } from "interfaces/IProduct";
 import ProductBasketCard from "Components/ProductBasketCard/ProductBasketCard";
+import { Utils } from "core/Utils";
 
 const Orders = () => {
   const user = useSelector((state: RootState) => state.data.user);
   const [orders, setOrders] = useState<IOrder[]>([]);
+  console.log("orders", orders);
 
   useEffect(() => {
     if (user) {
@@ -21,7 +22,7 @@ const Orders = () => {
           setOrders(
             snapshot.docs.map((item) => ({
               id: item.id,
-              product: item.data() as IProduct[],
+              product: item.data() as IOrderProduct,
             }))
           );
         });
@@ -38,10 +39,18 @@ const Orders = () => {
           <ul>
             {orders.map((order) => (
               <li key={order.id} className="orders__item">
-                <div className="orders__item__header">
+                <div className="orders__item__info">
+                  <div className="orders__item__info__date">
+                    {Utils.formatDate(order.product.created)}
+                  </div>
+                  <div className="orders__item__info__total">
+                    Total : $ {Utils.formatPrice(order.product.amount)}
+                  </div>
+                </div>
+                <div className="orders__item__contents">
                   <ul>
-                    {order.product.map((product) => (
-                      <li>
+                    {order.product.products.map((product) => (
+                      <li key={product.id}>
                         <ProductBasketCard {...product} />
                       </li>
                     ))}

@@ -30,23 +30,28 @@ const Payment = () => {
   const [succeeded, setSucceeded] = useState(false);
   const [error, setError] = useState<string>("");
   const [processing, setProcessing] = useState(false);
-  const [disabled, setDisabled] = useState(false);
+  const [disabled, setDisabled] = useState(true);
   const [clientSecret, setClientSecret] = useState<string>("");
 
   useEffect(() => {
     const getClientSecret = async () => {
-      const res = await axios({
-        method: "post",
-        url: `/payments/create?total=${Utils.getBasketTotal(basket) * 100}`,
-      });
+      try {
+        const total = Math.floor(Utils.getBasketTotal(basket) * 100);
+        if (total) {
+          const res = await axios({
+            method: "post",
+            url: `/payments/create?total=${total}`,
+          });
 
-      setClientSecret(res.data.clientSecret);
+          setClientSecret(res.data.clientSecret);
+        }
+      } catch (error) {
+        console.log(error);
+      }
     };
 
     getClientSecret();
   }, [basket]);
-
-  console.log("clientSecret", clientSecret);
 
   const handlePaymentSubmit = async (
     event: React.FormEvent<HTMLFormElement>
@@ -55,8 +60,12 @@ const Payment = () => {
     setProcessing(true);
 
     let cardValue = elements?.getElement(CardElement) as StripeCardElement;
+    if (!cardValue) {
+      alert("Card!!");
+      return;
+    }
 
-    const payload = await stripe
+    stripe
       ?.confirmCardPayment(clientSecret, {
         payment_method: {
           card: cardValue,
@@ -64,6 +73,12 @@ const Payment = () => {
       })
       .then(({ paymentIntent }) => {
         // paynet
+        if (!paymentIntent) {
+          alert(error);
+          setProcessing(false);
+          return;
+        }
+
         if (user && paymentIntent) {
           db.setBasket(user, paymentIntent, basket);
         }
@@ -136,12 +151,15 @@ const Payment = () => {
                   prefix={"$"}
                 />
               </div>
-              <button disabled={processing || disabled || succeeded}>
-                <span>{processing ? <p>Processing</p> : "buy now"}</span>
+              <button
+                className="orange-button"
+                disabled={processing || disabled || succeeded}
+              >
+                {processing ? "Processing" : "buy now"}
               </button>
 
               {/* error */}
-              {error && <div>{error}</div>}
+              {error && <div className="error-message">{error}</div>}
             </form>
           </div>
         </section>

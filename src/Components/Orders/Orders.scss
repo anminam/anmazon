@@ -18,4 +18,23 @@
     color: #111;
     text-align: center;
   }
+
+  &__item {
+    margin-bottom: 20px;
+  }
+
+  &__item__info {
+    background: white;
+    padding: 1em;
+    border-bottom: 1px solid #ddd;
+
+    &__date {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    &__total {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  }
 }
