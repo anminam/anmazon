@@ -8,7 +8,6 @@ import ProductBasketCard from "Components/ProductBasketCard/ProductBasketCard";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import {
   StripeCardElementChangeEvent,
-  StripeElementChangeEvent,
   StripeCardElement,
 } from "@stripe/stripe-js";
 

@@ -1,56 +1,91 @@
-[debug] [2020-09-11T06:28:04.548Z] ----------------------------------------------------------------------
-[debug] [2020-09-11T06:28:04.550Z] Command:       /usr/local/bin/node /usr/local/bin/firebase init
-[debug] [2020-09-11T06:28:04.550Z] CLI Version:   8.10.0
-[debug] [2020-09-11T06:28:04.550Z] Platform:      darwin
-[debug] [2020-09-11T06:28:04.550Z] Node Version:  v12.16.3
-[debug] [2020-09-11T06:28:04.552Z] Time:          Fri Sep 11 2020 15:28:04 GMT+0900 (GMT+09:00)
-[debug] [2020-09-11T06:28:04.552Z] ----------------------------------------------------------------------
-[debug] [2020-09-11T06:28:04.552Z] 
-[debug] [2020-09-11T06:28:04.561Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2020-09-11T06:28:04.561Z] > authorizing via signed-in user
-[info] 
-     ######## #### ########  ######## ########     ###     ######  ########
-     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
-     ######    ##  ########  ######   ########  #########  ######  ######
-     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
-     ##       #### ##     ## ######## ########  ##     ##  ######  ########
-
-You're about to initialize a Firebase project in this directory:
-
-  /Users/anminam/Documents/dev/anmazon
-
-Before we get started, keep in mind:
-
-  * You are initializing in an existing Firebase project directory
-
-[info] 
-=== Project Setup
-[info] 
-[info] First, let's associate this project directory with a Firebase project.
-[info] You can create multiple project aliases by running firebase use --add, 
-[info] but for now we'll just set up a default project.
-[info] 
-[info] i  .firebaserc already has a default project, using anmazon. 
-[debug] [2020-09-11T06:28:08.280Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2020-09-11T06:28:08.281Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+[debug] [2020-09-11T07:37:29.598Z] ----------------------------------------------------------------------
+[debug] [2020-09-11T07:37:29.599Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2020-09-11T07:37:29.599Z] CLI Version:   8.10.0
+[debug] [2020-09-11T07:37:29.599Z] Platform:      darwin
+[debug] [2020-09-11T07:37:29.599Z] Node Version:  v12.16.3
+[debug] [2020-09-11T07:37:29.601Z] Time:          Fri Sep 11 2020 16:37:29 GMT+0900 (GMT+09:00)
+[debug] [2020-09-11T07:37:29.601Z] ----------------------------------------------------------------------
+[debug] [2020-09-11T07:37:29.601Z] 
+[debug] [2020-09-11T07:37:29.609Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-09-11T07:37:29.610Z] > authorizing via signed-in user
+[debug] [2020-09-11T07:37:29.610Z] [iam] checking project anmazon for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-09-11T07:37:29.611Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-09-11T07:37:29.611Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
  <request body omitted>
-[debug] [2020-09-11T06:28:08.491Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 11 Sep 2020 06:27:48 GMT","server":"scaffolding on HTTPServer2","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
-[debug] [2020-09-11T06:28:08.515Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/anmazon  
+[debug] [2020-09-11T07:37:29.840Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 11 Sep 2020 07:37:09 GMT","server":"scaffolding on HTTPServer2","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-09-11T07:37:29.870Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/anmazon:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-09-11T07:37:30.832Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 11 Sep 2020 07:37:10 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=768","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-09-11T07:37:30.833Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/anmazon/serviceAccounts/anmazon@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2020-09-11T07:37:32.024Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 11 Sep 2020 07:37:11 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-09-11T07:37:32.024Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/anmazon  
  
-[debug] [2020-09-11T06:28:08.650Z] Server Error. read ECONNRESET
-[debug] [2020-09-11T06:28:08.872Z] FirebaseError: Server Error. read ECONNRESET
-    at Request._callback (/usr/local/lib/node_modules/firebase-tools/lib/api.js:32:31)
-    at self.callback (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:185:22)
-    at Request.emit (events.js:310:20)
-    at Request.EventEmitter.emit (domain.js:482:12)
-    at Request.onRequestError (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:877:8)
-    at ClientRequest.emit (events.js:322:22)
-    at ClientRequest.EventEmitter.emit (domain.js:482:12)
-    at TLSSocket.socketErrorListener (_http_client.js:426:9)
-    at TLSSocket.emit (events.js:310:20)
-    at TLSSocket.EventEmitter.emit (domain.js:482:12)
-    at emitErrorNT (internal/streams/destroy.js:92:8)
-    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
-    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+[debug] [2020-09-11T07:37:32.522Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 11 Sep 2020 07:37:12 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-09-11T07:37:32.722Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received undefined
+    at validateString (internal/validators.js:117:11)
+    at Object.join (path.js:1039:7)
+    at Object.checkFunctionsSDKVersion [as fn] (/usr/local/lib/node_modules/firebase-tools/lib/checkFirebaseSDKVersion.js:34:28)
+    at Command.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/command.js:164:30)
+    at Generator.next (<anonymous>)
+    at fulfilled (/usr/local/lib/node_modules/firebase-tools/lib/command.js:5:58)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
 [error] 
-[error] Error: Failed to get Firebase project anmazon. Please make sure the project exists and your account has permission to access it.
+[error] Error: An unexpected error has occurred.
+[debug] [2020-09-11T07:38:34.395Z] ----------------------------------------------------------------------
+[debug] [2020-09-11T07:38:34.396Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only hosting
+[debug] [2020-09-11T07:38:34.396Z] CLI Version:   8.10.0
+[debug] [2020-09-11T07:38:34.396Z] Platform:      darwin
+[debug] [2020-09-11T07:38:34.396Z] Node Version:  v12.16.3
+[debug] [2020-09-11T07:38:34.398Z] Time:          Fri Sep 11 2020 16:38:34 GMT+0900 (GMT+09:00)
+[debug] [2020-09-11T07:38:34.398Z] ----------------------------------------------------------------------
+[debug] [2020-09-11T07:38:34.398Z] 
+[debug] [2020-09-11T07:38:34.406Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-09-11T07:38:34.407Z] > authorizing via signed-in user
+[debug] [2020-09-11T07:38:34.407Z] [iam] checking project anmazon for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-09-11T07:38:34.408Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/anmazon:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-09-11T07:38:35.408Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 11 Sep 2020 07:38:15 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=789","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-09-11T07:38:35.409Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/anmazon  
+ 
+[debug] [2020-09-11T07:38:35.852Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 11 Sep 2020 07:38:15 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-09-11T07:38:36.042Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received undefined
+    at validateString (internal/validators.js:117:11)
+    at Object.join (path.js:1039:7)
+    at Object.checkFunctionsSDKVersion [as fn] (/usr/local/lib/node_modules/firebase-tools/lib/checkFirebaseSDKVersion.js:34:28)
+    at Command.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/command.js:164:30)
+    at Generator.next (<anonymous>)
+    at fulfilled (/usr/local/lib/node_modules/firebase-tools/lib/command.js:5:58)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2020-09-11T07:59:09.692Z] ----------------------------------------------------------------------
+[debug] [2020-09-11T07:59:09.693Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2020-09-11T07:59:09.693Z] CLI Version:   8.10.0
+[debug] [2020-09-11T07:59:09.693Z] Platform:      darwin
+[debug] [2020-09-11T07:59:09.693Z] Node Version:  v12.16.3
+[debug] [2020-09-11T07:59:09.695Z] Time:          Fri Sep 11 2020 16:59:09 GMT+0900 (GMT+09:00)
+[debug] [2020-09-11T07:59:09.695Z] ----------------------------------------------------------------------
+[debug] [2020-09-11T07:59:09.695Z] 
+[debug] [2020-09-11T07:59:09.706Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-09-11T07:59:09.706Z] > authorizing via signed-in user
+[debug] [2020-09-11T07:59:09.706Z] [iam] checking project anmazon for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-09-11T07:59:09.707Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/anmazon:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-09-11T07:59:10.764Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 11 Sep 2020 07:58:50 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=770","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-09-11T07:59:10.765Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/anmazon/serviceAccounts/anmazon@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2020-09-11T07:59:12.002Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 11 Sep 2020 07:58:51 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-09-11T07:59:12.003Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/anmazon  
+ 
+[debug] [2020-09-11T07:59:12.783Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 11 Sep 2020 07:58:52 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-09-11T07:59:12.977Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received undefined
+    at validateString (internal/validators.js:117:11)
+    at Object.join (path.js:1039:7)
+    at Object.checkFunctionsSDKVersion [as fn] (/usr/local/lib/node_modules/firebase-tools/lib/checkFirebaseSDKVersion.js:34:28)
+    at Command.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/command.js:164:30)
+    at Generator.next (<anonymous>)
+    at fulfilled (/usr/local/lib/node_modules/firebase-tools/lib/command.js:5:58)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+[error] 
+[error] Error: An unexpected error has occurred.

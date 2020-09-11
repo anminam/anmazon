@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./Checkout.scss";
+
 import SubTotal from "Components/SubTotal/SubTotal";
 import { RootState } from "core/Store";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import ProductBasketCard from "Components/ProductBasketCard/ProductBasketCard";
 import FlipMove from "react-flip-move";
 import { Utils } from "core/Utils";
-import { useHistory } from "react-router-dom";
 
 const Checkout = () => {
   const user = useSelector((state: RootState) => state.data.user);
