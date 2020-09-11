@@ -17,6 +17,7 @@ import { addBasketList } from "core/data/actions";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import { RootState } from "core/Store";
+import Orders from "Components/Orders/Orders";
 
 const promise = loadStripe(
   "pk_test_51HPzOqEZy06NtzOGkpT6APW499QGNHxD50tyTRaTuUCwJEbYgwW1oMrNmIQNfwtr9IJmkXTDbCQYQkW3nbXZF6Bm00rE9k2a1l"
@@ -66,6 +67,10 @@ function App() {
             <Elements stripe={promise}>
               <Payment />
             </Elements>
+          </Route>
+          <Route path="/orders">
+            <Header />
+            <Orders />
           </Route>
           <Route path="/">
             <Header />
