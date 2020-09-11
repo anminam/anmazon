@@ -6,6 +6,7 @@ import {
   SET_USER,
   SET_SIDE_BAR,
   ADD_BASKET_LIST,
+  EMPTY_BASKET,
 } from "./actions";
 
 interface IData {
@@ -46,6 +47,11 @@ const reducer = (state: IData = initState, action: TDataActions): IData => {
       return {
         ...state,
         isSideMenuOpen: action.payload,
+      };
+    case EMPTY_BASKET:
+      return {
+        ...state,
+        basket: [],
       };
     default:
       return state;
