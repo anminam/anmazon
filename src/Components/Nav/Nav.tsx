@@ -20,7 +20,7 @@ const initState = [
 const Nav = () => {
   const dispatch = useDispatch();
   const [list] = useState<IOption[]>(initState);
-  const baskets = useSelector((state: RootState) => state.data.baskets);
+  const basket = useSelector((state: RootState) => state.data.basket);
   const user = useSelector((state: RootState) => state.data.user);
 
   const handleAuth = () => {
@@ -54,7 +54,7 @@ const Nav = () => {
         <Link to="/checkout">
           <div className="nav__option__basket">
             <ShoppingBasketIcon />
-            <span className="nav__option__basket__count">{baskets.length}</span>
+            <span className="nav__option__basket__count">{basket.length}</span>
           </div>
         </Link>
       </div>

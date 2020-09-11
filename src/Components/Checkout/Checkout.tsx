@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Checkout.scss";
 import SubTotal from "Components/SubTotal/SubTotal";
 import { RootState } from "core/Store";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import ProductBasketCard from "Components/ProductBasketCard/ProductBasketCard";
 import FlipMove from "react-flip-move";
 import { Utils } from "core/Utils";
+import { useHistory } from "react-router-dom";
 
 const Checkout = () => {
   const user = useSelector((state: RootState) => state.data.user);
-  const list = useSelector((state: RootState) => state.data.baskets);
-  //  baskets
+  const basket = useSelector((state: RootState) => state.data.basket);
+
   return (
     <div className="checkout">
       <div className="checkout__header">
@@ -34,10 +35,10 @@ const Checkout = () => {
         </div>
       </div>
       <div className="checkout__contents">
-        {list.length === 0 && <div>empty</div>}
-        {list.length > 0 && (
+        {basket.length === 0 && <div>empty</div>}
+        {basket.length > 0 && (
           <FlipMove typeName="ul">
-            {list.map((item, i) => (
+            {basket.map((item, i) => (
               <li key={item.id}>
                 <ProductBasketCard {...item} />
               </li>

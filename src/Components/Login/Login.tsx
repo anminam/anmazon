@@ -8,8 +8,6 @@ import { useDispatch } from "react-redux";
 import { setUser } from "core/data/actions";
 
 const Login = () => {
-  // const list = useSelector((state: RootState) => state.data.baskets);
-  //  baskets
   const history = useHistory();
   const dispatch = useDispatch();
   const [email, setEmail] = useState<string>("");
