@@ -40,6 +40,10 @@
   &__title {
     border-bottom: 1px solid #ddd;
     padding-bottom: 1em;
+
+    h1 {
+      word-break: break-all;
+    }
   }
 
   &__empty {
