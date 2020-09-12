@@ -1,5 +1,4 @@
 import React from "react";
-import "./SubTotal.scss";
 import CurrencyFormat from "react-currency-format";
 import { useSelector } from "react-redux";
 import { RootState } from "core/Store";
@@ -45,6 +44,7 @@ const SubTotal = () => {
       />
       <button
         type="button"
+        className="orange-button"
         onClick={handleProcessButtonClick}
         disabled={basket.length === 0}
       >

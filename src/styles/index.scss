@@ -1,2 +1,19 @@
 @import "color";
 @import "button";
+
+@import "../App/App.scss";
+@import "../Components/Checkout/Checkout.scss";
+@import "../Components/Footer/Footer.scss";
+@import "../Components/Header/Header.scss";
+@import "../Components/Home/Home.scss";
+@import "../Components/Login/Login.scss";
+@import "../Components/Nav/Nav.scss";
+@import "../Components/Orders/Orders.scss";
+@import "../Components/Payment/Payment.scss";
+@import "../Components/SubTotal/SubTotal.scss";
+@import "../Components/ProductStars/ProductStars.scss";
+@import "../Components/SideMenu/SideMenu.scss";
+@import "../Components/Search/Search.scss";
+
+@import "../Components/ProductSmallCard/ProductSmallCard.scss";
+@import "../Components/ProductBasketCard/ProductBasketCard.scss";

@@ -1,7 +1,7 @@
 import React from "react";
-import "./Home.scss";
 import ProductSmallCard from "Components/ProductSmallCard/ProductSmallCard";
 import { getLocalDataList } from "core/localData";
+
 const Home = () => {
   return (
     <div className="home">

@@ -1,7 +1,4 @@
 import React, { useEffect } from "react";
-import "App/App.scss";
-import "styles/index.scss";
-
 import Header from "Components/Header/Header";
 import Home from "Components/Home/Home";
 import { Switch, Route, useHistory } from "react-router-dom";

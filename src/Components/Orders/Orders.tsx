@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./Orders.scss";
 import { useSelector } from "react-redux";
 import { RootState } from "core/Store";
 import { IOrder, IOrderProduct } from "interfaces/IOrder";

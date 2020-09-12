@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./Payment.scss";
 
 import CurrencyFormat from "react-currency-format";
 import { RootState } from "core/Store";

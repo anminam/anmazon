@@ -1,5 +1,4 @@
 import React from "react";
-import "./ProductBasketCard.scss";
 import { IProduct } from "interfaces/IProduct";
 import { useDispatch } from "react-redux";
 import { removeFromBasket } from "core/data/actions";
@@ -26,7 +25,9 @@ const ProductBasketCard = ({ title, price, img, rating, id }: IProduct) => {
           <ProductStars rating={rating} />
         </div>
         <div className="productbasketcard__footer">
-          <button onClick={handleButtonClick}>Remove from Basket</button>
+          <button onClick={handleButtonClick} className="orange-button">
+            Remove from Basket
+          </button>
         </div>
       </div>
     </div>

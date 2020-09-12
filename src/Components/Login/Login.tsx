@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./Login.scss";
 import Logo from "Components/Logo/Logo";
 import { useHistory } from "react-router-dom";
 import { auth } from "firebaseAnmazon";

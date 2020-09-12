@@ -1,5 +1,4 @@
 import React from "react";
-import "./Checkout.scss";
 
 import SubTotal from "Components/SubTotal/SubTotal";
 import { RootState } from "core/Store";

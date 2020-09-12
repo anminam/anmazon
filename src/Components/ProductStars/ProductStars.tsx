@@ -1,5 +1,4 @@
 import React from "react";
-import "./ProductStars.scss";
 
 interface IProps {
   rating: number;

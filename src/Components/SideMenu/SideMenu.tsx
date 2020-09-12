@@ -1,5 +1,4 @@
 import React from "react";
-import "./SideMenu.scss";
 import { RootState } from "core/Store";
 import { useSelector, useDispatch } from "react-redux";
 import { setSideBar } from "core/data/actions";

@@ -1,5 +1,4 @@
 import React from "react";
-import "./ProductSmallCard.scss";
 import { IProduct } from "interfaces/IProduct";
 import { useDispatch } from "react-redux";
 import { addToBasket } from "core/data/actions";
@@ -35,7 +34,9 @@ const ProductSmallCard = ({ title, price, img, rating, id }: IProduct) => {
         <img src={img} alt={title} />
       </div>
       <div className="productsmallcard__footer">
-        <button onClick={handleButtonClick}>Add to Cart</button>
+        <button onClick={handleButtonClick} className="orange-button">
+          Add to Cart
+        </button>
       </div>
     </div>
   );

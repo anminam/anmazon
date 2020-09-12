@@ -1,5 +1,4 @@
 import React from "react";
-import "./Search.scss";
 import { Search as SearchIcon } from "@material-ui/icons";
 
 const Search = () => {

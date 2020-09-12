@@ -1,5 +1,4 @@
 import React from "react";
-import "./Nav.scss";
 
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import { Link } from "react-router-dom";
