@@ -20,7 +20,7 @@
   &__container {
     position: relative;
     background: white;
-    width: 80%;
+    width: 30%;
     height: 100%;
     left: -100%;
     transition: 1s;
@@ -53,5 +53,17 @@
       font-weight: bold;
       text-decoration: none;
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sidemenu__container {
+    width: 70%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sidemenu__container {
+    width: 50%;
   }
 }

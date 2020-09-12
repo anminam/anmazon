@@ -22,6 +22,10 @@
     justify-content: center;
   }
 
+  &__left {
+    flex: 1;
+  }
+
   &__right {
     width: 300px;
   }
@@ -43,5 +47,12 @@
     font-size: 3rem;
     color: red;
     font-weight: bold;
+  }
+}
+@media screen and (max-width: 400px) {
+  .checkout {
+    &__right {
+      width: 200px;
+    }
   }
 }

@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="header__menu only_mobile">
+      <div className="header__menu">
         <button type="button" onClick={handleMenuClick}>
           <MenuIcon />
         </button>
