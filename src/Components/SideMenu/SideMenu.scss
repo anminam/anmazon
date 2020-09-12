@@ -16,9 +16,10 @@
   &__container {
     position: relative;
     background: white;
-    width: 30%;
+    width: 25%;
     height: 100%;
     left: -100%;
+    transition: 1s;
     animation-name: container_keyframe;
     animation-duration: 0.5s;
     animation-fill-mode: both;
@@ -34,6 +35,11 @@
       font-size: 30px;
       cursor: pointer;
     }
+
+    background-image: url("/images/anminam-sidebar-01.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: bottom;
   }
 
   &__login {
