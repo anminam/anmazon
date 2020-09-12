@@ -4,7 +4,14 @@ import { useDispatch } from "react-redux";
 import { removeFromBasket } from "core/data/actions";
 import ProductStars from "Components/ProductStars/ProductStars";
 
-const ProductBasketCard = ({ title, price, img, rating, id }: IProduct) => {
+interface IProps {
+  isRemoveAble?: boolean;
+  product: IProduct;
+}
+const ProductBasketCard = ({
+  isRemoveAble = true,
+  product: { title, price, img, rating, id },
+}: IProps) => {
   const dispatch = useDispatch();
 
   const handleButtonClick = () => {
@@ -24,11 +31,13 @@ const ProductBasketCard = ({ title, price, img, rating, id }: IProduct) => {
         <div className="productbasketcard__rating">
           <ProductStars rating={rating} />
         </div>
-        <div className="productbasketcard__footer">
-          <button onClick={handleButtonClick} className="orange-button">
-            Remove from Basket
-          </button>
-        </div>
+        {isRemoveAble && (
+          <div className="productbasketcard__footer">
+            <button onClick={handleButtonClick} className="orange-button">
+              Remove from Basket
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

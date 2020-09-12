@@ -41,7 +41,7 @@ const Checkout = () => {
           <FlipMove typeName="ul">
             {basket.map((item, i) => (
               <li key={i}>
-                <ProductBasketCard {...item} />
+                <ProductBasketCard product={item} />
               </li>
             ))}
           </FlipMove>

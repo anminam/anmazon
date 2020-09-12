@@ -49,7 +49,10 @@ const Orders = () => {
                   <ul>
                     {order.product.products.map((product) => (
                       <li key={product.id}>
-                        <ProductBasketCard {...product} />
+                        <ProductBasketCard
+                          product={product}
+                          isRemoveAble={false}
+                        />
                       </li>
                     ))}
                   </ul>

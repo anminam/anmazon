@@ -124,7 +124,7 @@ const Payment = () => {
               <ul>
                 {basket.map((item, i) => (
                   <li key={item.id}>
-                    <ProductBasketCard {...item} />
+                    <ProductBasketCard product={item} />
                   </li>
                 ))}
               </ul>
