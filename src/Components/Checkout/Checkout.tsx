@@ -40,7 +40,7 @@ const Checkout = () => {
         {basket.length > 0 && (
           <FlipMove typeName="ul">
             {basket.map((item, i) => (
-              <li key={item.id}>
+              <li key={i}>
                 <ProductBasketCard {...item} />
               </li>
             ))}
