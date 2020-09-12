@@ -1,4 +1,6 @@
 import React from "react";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import FacebookIcon from "@material-ui/icons/Facebook";
 
 const Footer = () => {
   /**
@@ -14,6 +16,28 @@ const Footer = () => {
         <button onClick={handleToTopButtonClick}>Back to top</button>
       </div>
       <div className="footer__buttom">
+        <ul className="footer__links">
+          {/* 아이템 */}
+          <li className="footer__links__item">
+            <a
+              href="https://github.com/anminam/anmazon"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GitHubIcon />
+            </a>
+          </li>
+          {/* 아이템 */}
+          <li className="footer__links__item">
+            <a
+              href="https://www.facebook.com/minam.an.37"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FacebookIcon />
+            </a>
+          </li>
+        </ul>
         <div className="footer__social-copyright">
           <p>
             @ 2020{" "}

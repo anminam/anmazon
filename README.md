@@ -8,6 +8,13 @@
 
 - https://material-ui.com/components/material-icons/
 
+## I Use
+
+- react(CRA)
+- typesciprt
+- firebase
+- spripe
+
 ## Airtable
 
 - name
