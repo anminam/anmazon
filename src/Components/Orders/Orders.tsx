@@ -31,7 +31,7 @@ const Orders = () => {
     <div className="orders">
       <div className="orders__container">
         <div className="orders__header">
-          <h1>Your Orders</h1>
+          <h1>{user ? Utils.getEmailName(user) + "'s" : `Your`} Orders</h1>
         </div>
         <div className="orders__contents">
           <ul>
