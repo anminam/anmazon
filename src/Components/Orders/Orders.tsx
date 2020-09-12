@@ -9,7 +9,6 @@ import { Utils } from "core/Utils";
 const Orders = () => {
   const user = useSelector((state: RootState) => state.data.user);
   const [orders, setOrders] = useState<IOrder[]>([]);
-  console.log("orders", orders);
 
   useEffect(() => {
     if (user) {

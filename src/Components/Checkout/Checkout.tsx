@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import SubTotal from "Components/SubTotal/SubTotal";
 import { RootState } from "core/Store";

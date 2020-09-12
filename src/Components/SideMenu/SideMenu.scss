@@ -11,10 +11,6 @@
   &.active {
     background-color: rgba(0, 0, 0, 0.3);
     display: block;
-
-    .sidemenu__container {
-      left: 0;
-    }
   }
 
   &__container {
@@ -23,7 +19,9 @@
     width: 30%;
     height: 100%;
     left: -100%;
-    transition: 1s;
+    animation-name: container_keyframe;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
 
     > button {
       position: absolute;
@@ -53,6 +51,18 @@
       font-weight: bold;
       text-decoration: none;
     }
+  }
+}
+
+@keyframes container_keyframe {
+  0% {
+    left: -100%;
+  }
+  20% {
+    left: -30%;
+  }
+  100% {
+    left: 0;
   }
 }
 

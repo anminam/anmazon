@@ -1,11 +1,17 @@
 .nav {
   display: flex;
   padding: 0 10px;
+
   &__option {
     display: flex;
     flex-flow: column;
     // padding: 0 20px 0 10px;
     justify-content: center;
+
+    &:active {
+      opacity: 0.8;
+      transform: scale(0.99);
+    }
 
     &__one {
       font-size: 0.7em;
