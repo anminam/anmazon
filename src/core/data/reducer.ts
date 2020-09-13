@@ -7,18 +7,21 @@ import {
   SET_SIDE_BAR,
   ADD_BASKET_LIST,
   EMPTY_BASKET,
+  SET_SEARCH_KEYWORD,
 } from "./actions";
 
 interface IData {
   user: firebase.User | null;
   basket: IProduct[];
   isSideMenuOpen: boolean;
+  searchKeyword: string;
 }
 
 const initState = {
   user: null,
   basket: [],
   isSideMenuOpen: false,
+  searchKeyword: "",
 };
 
 const reducer = (state: IData = initState, action: TDataActions): IData => {
@@ -52,6 +55,11 @@ const reducer = (state: IData = initState, action: TDataActions): IData => {
       return {
         ...state,
         basket: [],
+      };
+    case SET_SEARCH_KEYWORD:
+      return {
+        ...state,
+        searchKeyword: action.payload,
       };
     default:
       return state;

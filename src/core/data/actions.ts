@@ -35,10 +35,18 @@ export const emptyBasket = () => ({
   type: EMPTY_BASKET,
 });
 
+export const SET_SEARCH_KEYWORD = "SET_SEARCH_KEYWORD" as const;
+
+export const setSearchKeyword = (keyword: string) => ({
+  type: SET_SEARCH_KEYWORD,
+  payload: keyword,
+});
+
 export type TDataActions =
   | ReturnType<typeof setUser>
   | ReturnType<typeof setSideBar>
   | ReturnType<typeof addToBasket>
   | ReturnType<typeof addBasketList>
   | ReturnType<typeof emptyBasket>
+  | ReturnType<typeof setSearchKeyword>
   | ReturnType<typeof removeFromBasket>;
