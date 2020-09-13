@@ -2,18 +2,21 @@
 @import "button";
 
 @import "../App/App";
-@import "../Components/Checkout/Checkout";
-@import "../Components/Footer/Footer";
+
+// Pages
+@import "../Pages/Home/Home";
+@import "../Pages/Checkout/Checkout";
+@import "../Pages/Login/Login";
+@import "../Pages/Orders/Orders";
+@import "../Pages/Payment/Payment";
+
+// Components
 @import "../Components/Header/Header";
-@import "../Components/Home/Home";
-@import "../Components/Login/Login";
+@import "../Components/Footer/Footer";
 @import "../Components/Nav/Nav";
-@import "../Components/Orders/Orders";
-@import "../Components/Payment/Payment";
 @import "../Components/SubTotal/SubTotal";
 @import "../Components/ProductStars/ProductStars";
 @import "../Components/SideMenu/SideMenu";
 @import "../Components/Search/Search";
-
 @import "../Components/ProductSmallCard/ProductSmallCard.scss";
 @import "../Components/ProductBasketCard/ProductBasketCard.scss";

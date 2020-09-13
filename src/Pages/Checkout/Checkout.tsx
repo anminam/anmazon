@@ -1,11 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 
-import SubTotal from "Components/SubTotal/SubTotal";
 import { RootState } from "core/Store";
 import { useSelector } from "react-redux";
-import ProductBasketCard from "Components/ProductBasketCard/ProductBasketCard";
 import FlipMove from "react-flip-move";
 import { Utils } from "core/Utils";
+
+import SubTotal from "Components/SubTotal/SubTotal";
+import ProductBasketCard from "Components/ProductBasketCard/ProductBasketCard";
 
 const Checkout = () => {
   const user = useSelector((state: RootState) => state.data.user);

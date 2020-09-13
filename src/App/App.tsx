@@ -1,20 +1,24 @@
 import React, { useEffect } from "react";
-import Header from "Components/Header/Header";
-import Home from "Components/Home/Home";
+
 import { Switch, Route, useHistory } from "react-router-dom";
-import Checkout from "Components/Checkout/Checkout";
-import Login from "Components/Login/Login";
 import { auth } from "firebaseAnmazon";
 import { useDispatch, useSelector } from "react-redux";
 import { setSideBar, setUser } from "core/data/actions";
+
+import Header from "Components/Header/Header";
 import SideMenu from "Components/SideMenu/SideMenu";
 import Footer from "Components/Footer/Footer";
-import Payment from "Components/Payment/Payment";
+
 import { addBasketList } from "core/data/actions";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import { RootState } from "core/Store";
-import Orders from "Components/Orders/Orders";
+
+import Home from "Pages/Home/Home";
+import Orders from "Pages/Orders/Orders";
+import Checkout from "Pages/Checkout/Checkout";
+import Login from "Pages/Login/Login";
+import Payment from "Pages/Payment/Payment";
 
 const promise = loadStripe(
   "pk_test_51HPzOqEZy06NtzOGkpT6APW499QGNHxD50tyTRaTuUCwJEbYgwW1oMrNmIQNfwtr9IJmkXTDbCQYQkW3nbXZF6Bm00rE9k2a1l"
@@ -24,6 +28,9 @@ function App() {
 
   const basket = useSelector((state: RootState) => state.data.basket);
 
+  /**
+   * 인증 확인
+   */
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
       console.log("User ==>", authUser);
@@ -36,6 +43,9 @@ function App() {
     });
   }, [dispatch]);
 
+  /**
+   * 로컬스토리지 카트 확인
+   */
   useEffect(() => {
     const cartList = localStorage.getItem("cart-list");
     if (cartList) {
@@ -49,6 +59,9 @@ function App() {
 
   const history = useHistory();
 
+  /**
+   * 사이드바 관련
+   */
   useEffect(() => {
     return history.listen((state) => {
       dispatch(setSideBar(false));

@@ -61,6 +61,9 @@ const SideMenu = () => {
             <li>
               <Link to="/checkout">Cart</Link>
             </li>
+            <li>
+              <Link to="/orders">Orders</Link>
+            </li>
           </ul>
         </div>
       </div>
