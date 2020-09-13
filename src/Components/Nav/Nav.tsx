@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import { Link } from "react-router-dom";
@@ -17,6 +17,9 @@ const Nav = () => {
   const dispatch = useDispatch();
   const basket = useSelector((state: RootState) => state.data.basket);
   const user = useSelector((state: RootState) => state.data.user);
+  const [isChangeBasketLength, setisChangeBasketLength] = useState<boolean>(
+    false
+  );
 
   const handleAuth = () => {
     if (user) {
@@ -25,6 +28,13 @@ const Nav = () => {
     } else {
     }
   };
+
+  useEffect(() => {
+    setisChangeBasketLength(true);
+    setTimeout(() => {
+      setisChangeBasketLength(false);
+    }, 250);
+  }, [basket]);
 
   return (
     <div className="nav">
@@ -54,7 +64,13 @@ const Nav = () => {
         <Link to="/checkout">
           <div className="nav__option__basket">
             <ShoppingBasketIcon />
-            <span className="nav__option__basket__count">{basket.length}</span>
+            <span
+              className={`nav__option__basket__count ${
+                isChangeBasketLength ? "trigger" : ""
+              }`}
+            >
+              {basket.length}
+            </span>
           </div>
         </Link>
       </div>
